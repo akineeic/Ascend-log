@@ -1,0 +1,1636 @@
+do nothing
+[Modelarts Service Log]user: uid=1101(work) gid=1101(work) groups=1101(work),1000(HwHiAiUser)
+[Modelarts Service Log]pwd: /home/work
+[Modelarts Service Log]app_url: s3://keypointnet-train/MA-keypointnet-09-27-20-00/code/
+[Modelarts Service Log]boot_file: code/main.py
+[Modelarts Service Log]log_url: /tmp/log/MA-keypointnet-09-27-20-00.log
+[Modelarts Service Log]command: code/main.py --model_dir=s3://keypointnet-train/saved_ckpt/ --train_url=s3://keypointnet-train/output/ --data_url=s3://keypointnet-dataset/chairs_with_keypoints/ --train_url=s3://keypointnet-train/MA-keypointnet-09-27-20-00/output/V0044/
+[Modelarts Service Log]local_code_dir: 
+[Modelarts Service Log][modelarts_create_log] modelarts-pipe found
+[Modelarts Service Log]handle inputs of training job
+INFO:root:Using MoXing-v1.17.3-8aa951bc
+INFO:root:Using OBS-Python-SDK-3.20.7
+[ModelArts Service Log]INFO: env MA_INPUTS is not found, skip the inputs handler
+INFO:root:Using MoXing-v1.17.3-8aa951bc
+INFO:root:Using OBS-Python-SDK-3.20.7
+[ModelArts Service Log]2020-11-06 11:28:55,872 - modelarts-downloader.py[line:612] - INFO: Main: modelarts-downloader starting with Namespace(dst='./', recursive=True, skip_creating_dir=False, src='s3://keypointnet-train/MA-keypointnet-09-27-20-00/code/', trace=False, type='common', verbose=False)
+[Modelarts Service Log][modelarts_logger] modelarts-pipe found
+/home/work/user-job-dir
+[Modelarts Service Log][modelarts_logger] modelarts-pipe found
+[Modelarts Service Log]2020-11-06 11:28:56,296 - INFO - Davinci training command
+[Modelarts Service Log]2020-11-06 11:28:56,296 - INFO - ['/usr/bin/python', '/home/work/user-job-dir/code/main.py', '--model_dir=s3://keypointnet-train/saved_ckpt/', '--train_url=s3://keypointnet-train/output/', '--data_url=s3://keypointnet-dataset/chairs_with_keypoints/', '--train_url=s3://keypointnet-train/MA-keypointnet-09-27-20-00/output/V0044/']
+[Modelarts Service Log]2020-11-06 11:28:56,296 - INFO - Wait for Rank table file ready
+[Modelarts Service Log]2020-11-06 11:28:56,296 - INFO - Rank table file (K8S generated) is ready for read
+[Modelarts Service Log]2020-11-06 11:28:56,297 - INFO - 
+{
+    "status": "completed",
+    "group_count": "1",
+    "group_list": [
+        {
+            "group_name": "job-ma-keypointnet-09-27",
+            "device_count": "1",
+            "instance_count": "1",
+            "instance_list": [
+                {
+                    "pod_name": "job5cdd3a62-job-ma-keypointnet-09-27-0",
+                    "server_id": "192.168.0.120",
+                    "devices": [
+                        {
+                            "device_id": "2",
+                            "device_ip": "192.3.136.39"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+[Modelarts Service Log]2020-11-06 11:28:56,297 - INFO - Rank table file (C7x)
+[Modelarts Service Log]2020-11-06 11:28:56,297 - INFO - 
+{
+    "status": "completed",
+    "version": "1.0",
+    "server_count": "1",
+    "server_list": [
+        {
+            "server_id": "192.168.0.120",
+            "device": [
+                {
+                    "device_id": "2",
+                    "device_ip": "192.3.136.39",
+                    "rank_id": "0"
+                }
+            ]
+        }
+    ]
+}
+[Modelarts Service Log]2020-11-06 11:28:56,297 - INFO - Rank table file (C7x) is generated
+[Modelarts Service Log]2020-11-06 11:28:56,297 - INFO - Slogd startup
+[Modelarts Service Log]2020-11-06 11:28:56,299 - INFO - Current server
+[Modelarts Service Log]2020-11-06 11:28:56,300 - INFO - 
+{
+    "server_id": "192.168.0.120",
+    "device": [
+        {
+            "device_id": "2",
+            "device_ip": "192.3.136.39",
+            "rank_id": "0"
+        }
+    ]
+}
+[Modelarts Service Log]2020-11-06 11:28:56,300 - INFO - FMK of device2 startup
+Looking in indexes: http://repo.myhuaweicloud.com/repository/pypi/simple
+Collecting tf_slim
+  Downloading http://repo.myhuaweicloud.com/repository/pypi/packages/02/97/b0f4a64df018ca018cc035d44f2ef08f91e2e8aa67271f6f19633a015ff7/tf_slim-1.1.0-py2.py3-none-any.whl (352kB)
+Requirement already satisfied: absl-py>=0.2.2 in /usr/local/ma/python3.7/lib/python3.7/site-packages (from tf_slim) (0.10.0)
+Requirement already satisfied: six in /usr/local/ma/python3.7/lib/python3.7/site-packages (from absl-py>=0.2.2->tf_slim) (1.15.0)
+Installing collected packages: tf-slim
+Successfully installed tf-slim-1.1.0
+Start to import npu_bridge
+WARNING:tensorflow:From /cache/user-job-dir/code/utils.py:38: The name tf.train.SessionRunHook is deprecated. Please use tf.estimator.SessionRunHook instead.
+INFO:root:Using MoXing-v1.17.3-8aa951bc
+INFO:root:Using OBS-Python-SDK-3.20.7
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:714: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:714: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+W1106 11:29:05.750498 281472975208464 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+Download data.
+FLAGS.data_url is s3://keypointnet-dataset/chairs_with_keypoints/
+WARNING:tensorflow:From /cache/user-job-dir/code/utils.py:186: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+W1106 11:29:08.963500 281472975208464 module_wrapper.py:139] From /cache/user-job-dir/code/utils.py:186: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+INFO:tensorflow:NPUEstimator init...
+I1106 11:29:08.964891 281472975208464 npu_estimator.py:365] NPUEstimator init...
+WARNING:tensorflow:Warning:job config file does not exist
+W1106 11:29:08.965727 281472975208464 npu_common.py:178] Warning:job config file does not exist
+INFO:tensorflow:Using config: {'iterations_per_loop': 1, 'mix_compile_mode': False, 'enable_data_pre_proc': True, 'is_tailing_optimization': False, '_profiling_config': None, '_precision_mode': None, '_enable_reduce_precision': False, '_variable_format_optimize': True, '_hcom_parallel': False, '_graph_memory_max_size': None, '_variable_memory_max_size': None, '_auto_tune_mode': None, '_dump_config': None, '_stream_max_parallel_num': None, 'horovod_mode': False, 'graph_run_mode': 1, 'op_debug_level': 0, 'enable_scope_fusion_passes': None, 'enable_exception_dump': 0, '_op_select_implmode': None, '_optypelist_for_implmode': None, '_model_dir': 's3://keypointnet-train/saved_ckpt/', '_tf_random_seed': None, '_save_summary_steps': 50, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  allow_growth: true
+}
+allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    optimizers: "pruning"
+    optimizers: "function"
+    optimizers: "constfold"
+    optimizers: "shape"
+    optimizers: "arithmetic"
+    optimizers: "loop"
+    optimizers: "dependency"
+    optimizers: "layout"
+    optimizers: "memory"
+    optimizers: "GradFusionOptimizer"
+    custom_optimizers {
+      name: "NpuOptimizer"
+      parameter_map {
+        key: "enable_data_pre_proc"
+        value {
+          b: true
+        }
+      }
+      parameter_map {
+        key: "enable_dump"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "enable_dump_debug"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "enable_exception_dump"
+        value {
+          i: 0
+        }
+      }
+      parameter_map {
+        key: "enable_reduce_precision"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "graph_run_mode"
+        value {
+          i: 1
+        }
+      }
+      parameter_map {
+        key: "hcom_parallel"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "is_tailing_optimization"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "iterations_per_loop"
+        value {
+          i: 1
+        }
+      }
+      parameter_map {
+        key: "job"
+        value {
+          s: "localhost"
+        }
+      }
+      parameter_map {
+        key: "min_group_size"
+        value {
+          b: true
+        }
+      }
+      parameter_map {
+        key: "mix_compile_mode"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "op_debug_level"
+        value {
+          i: 0
+        }
+      }
+      parameter_map {
+        key: "precision_mode"
+        value {
+          s: "allow_fp32_to_fp16"
+        }
+      }
+      parameter_map {
+        key: "profiling_mode"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "profiling_options"
+        value {
+          s: "training_trace"
+        }
+      }
+      parameter_map {
+        key: "task_index"
+        value {
+          i: 0
+        }
+      }
+      parameter_map {
+        key: "use_off_line"
+        value {
+          b: true
+        }
+      }
+      parameter_map {
+        key: "variable_format_optimize"
+        value {
+          b: true
+        }
+      }
+    }
+  }
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 0.5, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0xffff64ddb290>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+I1106 11:29:08.967005 281472975208464 estimator.py:212] Using config: {'iterations_per_loop': 1, 'mix_compile_mode': False, 'enable_data_pre_proc': True, 'is_tailing_optimization': False, '_profiling_config': None, '_precision_mode': None, '_enable_reduce_precision': False, '_variable_format_optimize': True, '_hcom_parallel': False, '_graph_memory_max_size': None, '_variable_memory_max_size': None, '_auto_tune_mode': None, '_dump_config': None, '_stream_max_parallel_num': None, 'horovod_mode': False, 'graph_run_mode': 1, 'op_debug_level': 0, 'enable_scope_fusion_passes': None, 'enable_exception_dump': 0, '_op_select_implmode': None, '_optypelist_for_implmode': None, '_model_dir': 's3://keypointnet-train/saved_ckpt/', '_tf_random_seed': None, '_save_summary_steps': 50, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': gpu_options {
+  allow_growth: true
+}
+allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    optimizers: "pruning"
+    optimizers: "function"
+    optimizers: "constfold"
+    optimizers: "shape"
+    optimizers: "arithmetic"
+    optimizers: "loop"
+    optimizers: "dependency"
+    optimizers: "layout"
+    optimizers: "memory"
+    optimizers: "GradFusionOptimizer"
+    custom_optimizers {
+      name: "NpuOptimizer"
+      parameter_map {
+        key: "enable_data_pre_proc"
+        value {
+          b: true
+        }
+      }
+      parameter_map {
+        key: "enable_dump"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "enable_dump_debug"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "enable_exception_dump"
+        value {
+          i: 0
+        }
+      }
+      parameter_map {
+        key: "enable_reduce_precision"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "graph_run_mode"
+        value {
+          i: 1
+        }
+      }
+      parameter_map {
+        key: "hcom_parallel"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "is_tailing_optimization"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "iterations_per_loop"
+        value {
+          i: 1
+        }
+      }
+      parameter_map {
+        key: "job"
+        value {
+          s: "localhost"
+        }
+      }
+      parameter_map {
+        key: "min_group_size"
+        value {
+          b: true
+        }
+      }
+      parameter_map {
+        key: "mix_compile_mode"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "op_debug_level"
+        value {
+          i: 0
+        }
+      }
+      parameter_map {
+        key: "precision_mode"
+        value {
+          s: "allow_fp32_to_fp16"
+        }
+      }
+      parameter_map {
+        key: "profiling_mode"
+        value {
+          b: false
+        }
+      }
+      parameter_map {
+        key: "profiling_options"
+        value {
+          s: "training_trace"
+        }
+      }
+      parameter_map {
+        key: "task_index"
+        value {
+          i: 0
+        }
+      }
+      parameter_map {
+        key: "use_off_line"
+        value {
+          b: true
+        }
+      }
+      parameter_map {
+        key: "variable_format_optimize"
+        value {
+          b: true
+        }
+      }
+    }
+  }
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 0.5, '_log_step_count_steps': 100, '_train_distribute': None, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_experimental_max_worker_delay_secs': None, '_session_creation_timeout_secs': 7200, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0xffff64ddb290>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1}
+model_dir is s3://keypointnet-train/saved_ckpt/
+2020-11-06 11:29:08.974231: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing config loader against fileName /home/work//.aws/config and using profilePrefix = 1
+2020-11-06 11:29:08.974264: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing config loader against fileName /home/work//.aws/credentials and using profilePrefix = 0
+2020-11-06 11:29:08.974276: I tensorflow/core/platform/s3/aws_logging.cc:54] Setting provider to read credentials from /home/work//.aws/credentials for credentials file and /home/work//.aws/config for the config file , for use with profile default
+2020-11-06 11:29:08.974295: I tensorflow/core/platform/s3/aws_logging.cc:54] Creating AWSHttpResourceClient with max connections2 and scheme http
+2020-11-06 11:29:08.974305: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing CurlHandleContainer with size 2
+2020-11-06 11:29:08.974314: I tensorflow/core/platform/s3/aws_logging.cc:54] Creating Instance with default EC2MetadataClient and refresh rate 300000
+2020-11-06 11:29:08.974321: I tensorflow/core/platform/s3/aws_logging.cc:54] Added EC2 metadata service credentials provider to the provider chain.
+2020-11-06 11:29:08.974334: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:08.974906: I tensorflow/core/platform/s3/aws_logging.cc:54] Initializing CurlHandleContainer with size 25
+2020-11-06 11:29:08.976577: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:08.976694: I tensorflow/core/platform/s3/aws_logging.cc:54] Pool grown by 2
+2020-11-06 11:29:08.976707: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.003800: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.003893: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.014837: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.014934: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.021719: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.021800: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.031814: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.031908: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.053896: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.053991: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.065419: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.065560: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.072916: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.072994: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.083200: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.083282: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.092014: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.092088: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.102610: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.102708: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.114149: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.114292: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.122057: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.122147: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.134936: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.135029: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.142426: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.142509: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.153116: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.153282: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.164880: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.164968: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.177152: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.177245: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.201279: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.201370: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.214931: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.215022: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.225987: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.226098: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.234999: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.235091: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:09.243194: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:09.243285: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+WARNING:tensorflow:From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+W1106 11:29:09.282054 281472975208464 deprecation.py:323] From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+WARNING:tensorflow:From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+W1106 11:29:09.450804 281472975208464 module_wrapper.py:139] From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.parse_single_example is deprecated. Please use tf.io.parse_single_example instead.
+WARNING:tensorflow:From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.FixedLenFeature is deprecated. Please use tf.io.FixedLenFeature instead.
+W1106 11:29:09.451336 281472975208464 module_wrapper.py:139] From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.FixedLenFeature is deprecated. Please use tf.io.FixedLenFeature instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:127: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W1106 11:29:09.786464 281472975208464 deprecation.py:323] From /home/work/user-job-dir/code/main.py:127: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:127: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+W1106 11:29:09.788004 281472975208464 deprecation.py:323] From /home/work/user-job-dir/code/main.py:127: div (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Deprecated in favor of operator or tf.math.divide.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:147: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+W1106 11:29:09.824664 281472975208464 deprecation.py:323] From /home/work/user-job-dir/code/main.py:147: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+INFO:tensorflow:Calling model_fn.
+I1106 11:29:09.850440 281472975208464 estimator.py:1148] Calling model_fn.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:518: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+W1106 11:29:09.863977 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:518: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:520: The name tf.train.get_global_step is deprecated. Please use tf.compat.v1.train.get_global_step instead.
+W1106 11:29:09.864369 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:520: The name tf.train.get_global_step is deprecated. Please use tf.compat.v1.train.get_global_step instead.
+WARNING:tensorflow:From /usr/local/ma/python3.7/lib/python3.7/site-packages/tf_slim/layers/layers.py:1089: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+W1106 11:29:09.876346 281472975208464 deprecation.py:323] From /usr/local/ma/python3.7/lib/python3.7/site-packages/tf_slim/layers/layers.py:1089: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:482: The name tf.log is deprecated. Please use tf.math.log instead.
+W1106 11:29:11.587250 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:482: The name tf.log is deprecated. Please use tf.math.log instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:543: The name tf.losses.mean_squared_error is deprecated. Please use tf.compat.v1.losses.mean_squared_error instead.
+W1106 11:29:11.649363 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:543: The name tf.losses.mean_squared_error is deprecated. Please use tf.compat.v1.losses.mean_squared_error instead.
+WARNING:tensorflow:From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/ops/losses/losses_impl.py:121: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W1106 11:29:11.668426 281472975208464 deprecation.py:323] From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/ops/losses/losses_impl.py:121: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:230: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+W1106 11:29:12.921462 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:230: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:240: The name tf.matrix_diag is deprecated. Please use tf.linalg.diag instead.
+W1106 11:29:12.939203 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:240: The name tf.matrix_diag is deprecated. Please use tf.linalg.diag instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:241: The name tf.svd is deprecated. Please use tf.linalg.svd instead.
+W1106 11:29:12.941985 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:241: The name tf.svd is deprecated. Please use tf.linalg.svd instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:243: The name tf.matrix_determinant is deprecated. Please use tf.linalg.det instead.
+W1106 11:29:12.943130 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:243: The name tf.matrix_determinant is deprecated. Please use tf.linalg.det instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:585: The name tf.summary.image is deprecated. Please use tf.compat.v1.summary.image instead.
+W1106 11:29:12.994905 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:585: The name tf.summary.image is deprecated. Please use tf.compat.v1.summary.image instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:591: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+W1106 11:29:13.021591 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:591: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+WARNING:tensorflow:From /home/work/user-job-dir/code/main.py:609: The name tf.metrics.mean is deprecated. Please use tf.compat.v1.metrics.mean instead.
+W1106 11:29:13.033467 281472975208464 module_wrapper.py:139] From /home/work/user-job-dir/code/main.py:609: The name tf.metrics.mean is deprecated. Please use tf.compat.v1.metrics.mean instead.
+WARNING:tensorflow:From /cache/user-job-dir/code/utils.py:107: The name tf.add_to_collection is deprecated. Please use tf.compat.v1.add_to_collection instead.
+W1106 11:29:13.089309 281472975208464 module_wrapper.py:139] From /cache/user-job-dir/code/utils.py:107: The name tf.add_to_collection is deprecated. Please use tf.compat.v1.add_to_collection instead.
+WARNING:tensorflow:From /cache/user-job-dir/code/utils.py:115: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+W1106 11:29:13.089678 281472975208464 module_wrapper.py:139] From /cache/user-job-dir/code/utils.py:115: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+INFO:tensorflow:Create CheckpointSaverHook.
+I1106 11:29:16.827279 281472975208464 basic_session_run_hooks.py:541] Create CheckpointSaverHook.
+INFO:tensorflow:Done calling model_fn.
+I1106 11:29:16.827689 281472975208464 estimator.py:1150] Done calling model_fn.
+2020-11-06 11:29:16.829670: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:16.829796: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:16.843773: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:16.843856: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:16.859959: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:16.860042: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:16.869917: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:16.869994: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.473332: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.473488: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.489900: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.490070: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.517628: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.517737: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.527145: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.527234: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.546930: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.547050: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.606997: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.607105: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.662021: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.662125: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:17.671857: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:17.671942: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+INFO:tensorflow:Graph was finalized.
+I1106 11:29:18.875462 281472975208464 monitored_session.py:240] Graph was finalized.
+2020-11-06 11:29:18.898971: W tensorflow/core/platform/profile_utils/cpu_utils.cc:98] Failed to find bogomips in /proc/cpuinfo; cannot determine CPU frequency
+2020-11-06 11:29:18.906866: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x240fbd00 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-11-06 11:29:18.906909: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-11-06 11:29:18.914970: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:18.915098: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:18.925633: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:18.925716: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:18.937803: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:18.937895: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:18.946019: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:18.946099: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:18.958904: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:18.958997: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:18.987461: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:18.987564: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:19.001351: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:19.001492: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:19.009844: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:19.009926: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:19.021837: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:19.021921: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:19.030519: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:19.030595: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+INFO:tensorflow:Restoring parameters from s3://keypointnet-train/saved_ckpt/model.ckpt-0
+I1106 11:29:19.043175 281472975208464 saver.py:1284] Restoring parameters from s3://keypointnet-train/saved_ckpt/model.ckpt-0
+2020-11-06 11:29:19.507210: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 433
+2020-11-06 11:29:19.507257: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:19.511230: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 433
+2020-11-06 11:29:19.549115: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 433
+2020-11-06 11:29:19.549150: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:19.552567: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 433
+2020-11-06 11:29:19.595265: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:19.595978: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_1 success. [0 ms]
+2020-11-06 11:29:19.596008: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:19.596254: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:19.596268: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:19.596277: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:19.596286: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:19.596313: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:19.596594: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_1 begin.
+2020-11-06 11:29:19.596606: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:19.596612: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:19.597530: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:19.597583: I tf_adapter/util/npu_ops_identifier.cc:67] [ALL] Parsing json from /usr/local/Ascend/nnae/latest/opp/framework/built-in/tensorflow/npu_supported_ops.json
+2020-11-06 11:29:19.600132: I tf_adapter/util/npu_ops_identifier.cc:69] 690 ops parsed
+2020-11-06 11:29:19.600284: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: Const is not in white list, so currently not support
+2020-11-06 11:29:19.600428: W tf_adapter/util/generate_report.cc:55] [GenerateReport] Remove check report failed. path:/home/work/workspace/device2/check_result.tf.json
+2020-11-06 11:29:19.600444: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: RestoreV2 is not in white list, so currently not support
+2020-11-06 11:29:19.600634: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: _Arg is not in white list, so currently not support
+2020-11-06 11:29:19.600657: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [3 ms]
+2020-11-06 11:29:19.623127: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 1
+2020-11-06 11:29:19.623150: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 433, max nodes count: 427 in subgraph: GeOp1_0 minGroupSize: 1
+2020-11-06 11:29:19.623270: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_1 markForPartition success.
+2020-11-06 11:29:19.629621: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:19.641341: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_1 SubgraphsInFunctions success.
+2020-11-06 11:29:19.641368: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_1 success. [45 ms]
+2020-11-06 11:29:19.641457: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:19.641469: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:19.641479: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:19.646631: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:19.647728: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:19.647795: I tf_adapter/util/ge_plugin.cc:52] [GePlugin] new constructor
+2020-11-06 11:29:19.647811: I tf_adapter/util/ge_plugin.cc:94] [GePlugin] graph run mode : 1
+2020-11-06 11:29:19.658999: I tf_adapter/util/ge_plugin.cc:99] [GePlugin] device id : 0
+2020-11-06 11:29:19.659041: I tf_adapter/util/ge_plugin.cc:119] [GePlugin] env RANK_TABLE_FILE:/home/work/rank_table/jobstart_hccl.json
+2020-11-06 11:29:19.659051: I tf_adapter/util/ge_plugin.cc:129] [GePlugin] env RANK_ID:0
+2020-11-06 11:29:19.659060: I tf_adapter/util/ge_plugin.cc:142] [GePlugin] is_tailing_optimization : 0
+2020-11-06 11:29:19.659068: I tf_adapter/util/ge_plugin.cc:145] [GePlugin] profiling_mode : 0, profiling_options:training_trace, fp_point: , bp_point: 
+2020-11-06 11:29:19.659075: I tf_adapter/util/ge_plugin.cc:151] [GePlugin] precision_mode : allow_fp32_to_fp16
+2020-11-06 11:29:19.659081: I tf_adapter/util/ge_plugin.cc:154] [GePlugin] auto_tune_mode : 
+2020-11-06 11:29:19.659087: I tf_adapter/util/ge_plugin.cc:157] [GePlugin] op_debug_level : 0
+2020-11-06 11:29:19.659092: I tf_adapter/util/ge_plugin.cc:160] [GePlugin] enable_scope_fusion_passes : 
+2020-11-06 11:29:19.659097: I tf_adapter/util/ge_plugin.cc:163] [GePlugin] enable_exception_dump : 0
+2020-11-06 11:29:19.659102: I tf_adapter/util/ge_plugin.cc:166] [GePlugin] Start Init tdt host.
+2020-11-06 11:29:19.661409: I tf_adapter/util/ge_plugin.cc:172] [GePlugin] Tdt host init succeed.
+2020-11-06 11:29:21.686736: I tf_adapter/util/ge_plugin.cc:179] [GePlugin] Initialize ge success.
+2020-11-06 11:29:21.693737: I tf_adapter/util/ge_plugin.cc:187] [GePlugin] Initialize parser success.
+2020-11-06 11:29:21.693761: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:21.693806: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [2046 ms]
+2020-11-06 11:29:21.694169: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.694300: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.719938: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.720056: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.736158: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.736243: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.750034: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.750123: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.759452: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.759540: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.774429: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.774571: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.783609: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.783768: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.797087: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.797186: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.812566: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.812660: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.822775: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.822871: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.833710: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.833829: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.895194: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.895302: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:21.944206: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:21.944309: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:22.002105: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:22.002209: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:22.050161: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:22.050265: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:22.098411: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:22.098516: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:22.152887: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:22.152917: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp1_0 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:22.152930: I tf_adapter/util/session_manager.cc:100] [GEOP] variable_acceleration :1
+2020-11-06 11:29:22.152939: I tf_adapter/util/session_manager.cc:102] [GEOP] hcom_parallel :0
+2020-11-06 11:29:22.152945: I tf_adapter/util/session_manager.cc:105] [GEOP] stream_max_parallel_num :
+2020-11-06 11:29:22.152955: I tf_adapter/util/session_manager.cc:121] [GEOP] op_select_implmode : high_performance
+2020-11-06 11:29:22.152961: I tf_adapter/util/session_manager.cc:123] [GEOP] optypelist_for_implmode : 
+2020-11-06 11:29:22.152966: W tf_adapter/util/session_manager.cc:129] [GEOP] can not get DISABLE_REUSE_MEMORY in env, set to default 0
+2020-11-06 11:29:22.152975: I tf_adapter/util/session_manager.cc:135] [GEOP] enable_dump :0, dump_path :, dump_step :NA, dump_mode :output, enable_dump_debug :0, dump_debug_mode :all
+2020-11-06 11:29:22.152981: I tf_adapter/util/session_manager.cc:82] [GEOP] hcom_parallel :0
+2020-11-06 11:29:22.152986: I tf_adapter/util/session_manager.cc:85] [GEOP] stream_max_parallel_num :
+2020-11-06 11:29:22.156648: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:22.156672: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp1_0, num_inputs:213, num_outputs:0
+2020-11-06 11:29:22.156774: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 1 does not build yet, no need to check rebuild
+2020-11-06 11:29:22.156844: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:22.156854: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp1_0.
+2020-11-06 11:29:22.164501: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp1_0 success.
+2020-11-06 11:29:22.168359: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp1_0 success.
+2020-11-06 11:29:22.171527: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:22.171559: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:22.175265: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node save/restore_all is null.
+2020-11-06 11:29:22.175284: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:22.191761: I tf_adapter/kernels/geop_npu.cc:440] [GEOP] In GEOP computeAsync, kernel_name:GeOp1_0 ,TFadapter cost time: [35 ms]
+2020-11-06 11:29:22.191892: I tf_adapter/kernels/geop_npu.cc:442] [GEOP] TFadpter process graph success, GE parser begin, kernel_name:GeOp1_0 ,tf session: directf96677ec0510e9e8 ,graph id :1
+2020-11-06 11:29:22.305563: I tf_adapter/kernels/geop_npu.cc:508] [GEOP] Tensorflow graph parse to ge graph success, kernel_name:GeOp1_0 ,tf session: directf96677ec0510e9e8 ,graph id: 1
+2020-11-06 11:29:22.306468: I tf_adapter/kernels/geop_npu.cc:539] [GEOP] Add graph to ge session success, kernel_name:GeOp1_0 ,tf session: directf96677ec0510e9e8 ,graph id:1
+2020-11-06 11:29:22.311375: I tf_adapter/kernels/geop_npu.cc:580] [GEOP] Call ge session RunGraphAsync, kernel_name:GeOp1_0 ,tf session: directf96677ec0510e9e8 ,graph id: 1
+2020-11-06 11:29:22.311499: I tf_adapter/kernels/geop_npu.cc:593] [GEOP] End GeOp::ComputeAsync, kernel_name:GeOp1_0, ret_status:success ,tf session: directf96677ec0510e9e8 ,graph id: 1 [154 ms]
+2020-11-06 11:29:30.534474: I tf_adapter/kernels/geop_npu.cc:76] BuildOutputTensorInfo, num_outputs:0
+2020-11-06 11:29:30.534525: I tf_adapter/kernels/geop_npu.cc:573] [GEOP] RunGraphAsync callback, status:0, kernel_name:GeOp1_0[ 8224589us]
+WARNING:tensorflow:From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+W1106 11:29:30.535689 281472975208464 deprecation.py:323] From /usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+2020-11-06 11:29:30.536318: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.536441: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.553026: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.553187: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.562237: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.562325: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.575249: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.575342: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.584772: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.584855: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.600480: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.600634: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.609687: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:30.609776: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:30.850608: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 435
+2020-11-06 11:29:30.850661: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:30.853469: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 435
+2020-11-06 11:29:30.885848: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 435
+2020-11-06 11:29:30.885883: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:30.888690: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 435
+2020-11-06 11:29:30.926166: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:30.926820: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_2 success. [0 ms]
+2020-11-06 11:29:30.926849: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:30.927057: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:30.927070: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:30.927079: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:30.927092: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:30.927127: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:30.927379: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_3 begin.
+2020-11-06 11:29:30.927392: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:30.927398: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:30.928290: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:30.928694: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: _Retval is not in white list, so currently not support
+2020-11-06 11:29:30.928714: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [0 ms]
+2020-11-06 11:29:30.951392: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 1
+2020-11-06 11:29:30.951417: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 438, max nodes count: 430 in subgraph: GeOp3_0 minGroupSize: 1
+2020-11-06 11:29:30.951594: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_3 markForPartition success.
+2020-11-06 11:29:30.956042: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:30.964969: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_3 SubgraphsInFunctions success.
+2020-11-06 11:29:30.964996: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_3 success. [37 ms]
+2020-11-06 11:29:30.965129: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:30.965144: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:30.965154: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:30.971549: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:30.971917: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:30.971969: I tf_adapter/util/ge_plugin.cc:69] [GePlugin] Ge has already initialized
+2020-11-06 11:29:30.971981: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:30.972001: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [0 ms]
+2020-11-06 11:29:30.972620: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:30.972653: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp3_0 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:30.972661: I tf_adapter/util/session_manager.cc:50] tf session directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:30.972667: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:30.972674: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp3_0, num_inputs:0, num_outputs:1
+2020-11-06 11:29:30.972682: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 11 does not build yet, no need to check rebuild
+2020-11-06 11:29:30.972733: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:30.972743: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp3_0.
+2020-11-06 11:29:30.977279: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp3_0 success.
+2020-11-06 11:29:30.979963: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp3_0 success.
+2020-11-06 11:29:30.981731: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:30.981752: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:30.984039: W tf_adapter/util/infershape_util.cc:326] The shape of node report_uninitialized_variables_1/boolean_mask/Where output 0 is [?,1], unknown shape.
+2020-11-06 11:29:30.984077: W tf_adapter/util/infershape_util.cc:326] The shape of node report_uninitialized_variables_1/boolean_mask/Squeeze output 0 is [?], unknown shape.
+2020-11-06 11:29:30.984094: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:30.990885: I tf_adapter/util/infershape_util.cc:127] GEOP::IsInitializedGraph
+INFO:tensorflow:Running local_init_op.
+I1106 11:29:30.996928 281472975208464 session_manager.py:500] Running local_init_op.
+2020-11-06 11:29:31.137428: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 19
+2020-11-06 11:29:31.137477: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:31.137607: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 19
+2020-11-06 11:29:31.138858: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 19
+2020-11-06 11:29:31.138881: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:31.138999: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 19
+2020-11-06 11:29:31.168929: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:31.169426: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_3 success. [0 ms]
+2020-11-06 11:29:31.169451: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:31.169485: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:31.169495: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:31.169504: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:31.169514: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:31.169538: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:31.169607: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_5 begin.
+2020-11-06 11:29:31.169616: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:31.169622: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:31.169674: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:31.169718: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [0 ms]
+2020-11-06 11:29:31.169908: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 1
+2020-11-06 11:29:31.169919: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 21, max nodes count: 19 in subgraph: GeOp5_0 minGroupSize: 1
+2020-11-06 11:29:31.169933: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_5 markForPartition success.
+2020-11-06 11:29:31.170174: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:31.171024: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_5 SubgraphsInFunctions success.
+2020-11-06 11:29:31.171045: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_5 success. [1 ms]
+2020-11-06 11:29:31.171127: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:31.171139: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:31.171148: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:31.172700: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:31.172890: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:31.172934: I tf_adapter/util/ge_plugin.cc:69] [GePlugin] Ge has already initialized
+2020-11-06 11:29:31.172944: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:31.172964: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [0 ms]
+2020-11-06 11:29:31.173042: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:31.173081: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp5_0 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:31.173089: I tf_adapter/util/session_manager.cc:50] tf session directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:31.173096: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:31.173102: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp5_0, num_inputs:0, num_outputs:0
+2020-11-06 11:29:31.173110: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 21 does not build yet, no need to check rebuild
+2020-11-06 11:29:31.173286: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:31.173298: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp5_0.
+2020-11-06 11:29:31.173577: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp5_0 success.
+2020-11-06 11:29:31.173757: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp5_0 success.
+2020-11-06 11:29:31.173864: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:31.173875: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:31.173998: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node group_deps_1 is null.
+2020-11-06 11:29:31.174007: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:31.174464: I tf_adapter/kernels/geop_npu.cc:440] [GEOP] In GEOP computeAsync, kernel_name:GeOp5_0 ,TFadapter cost time: [1 ms]
+2020-11-06 11:29:31.174477: I tf_adapter/kernels/geop_npu.cc:442] [GEOP] TFadpter process graph success, GE parser begin, kernel_name:GeOp5_0 ,tf session: directf96677ec0510e9e8 ,graph id :21
+2020-11-06 11:29:31.181963: I tf_adapter/kernels/geop_npu.cc:508] [GEOP] Tensorflow graph parse to ge graph success, kernel_name:GeOp5_0 ,tf session: directf96677ec0510e9e8 ,graph id: 21
+2020-11-06 11:29:31.182095: I tf_adapter/kernels/geop_npu.cc:539] [GEOP] Add graph to ge session success, kernel_name:GeOp5_0 ,tf session: directf96677ec0510e9e8 ,graph id:21
+2020-11-06 11:29:31.182228: I tf_adapter/kernels/geop_npu.cc:580] [GEOP] Call ge session RunGraphAsync, kernel_name:GeOp5_0 ,tf session: directf96677ec0510e9e8 ,graph id: 21
+2020-11-06 11:29:31.182297: I tf_adapter/kernels/geop_npu.cc:593] [GEOP] End GeOp::ComputeAsync, kernel_name:GeOp5_0, ret_status:success ,tf session: directf96677ec0510e9e8 ,graph id: 21 [9 ms]
+2020-11-06 11:29:31.345563: I tf_adapter/kernels/geop_npu.cc:76] BuildOutputTensorInfo, num_outputs:0
+2020-11-06 11:29:31.345633: I tf_adapter/kernels/geop_npu.cc:573] [GEOP] RunGraphAsync callback, status:0, kernel_name:GeOp5_0[ 163400us]
+INFO:tensorflow:Done running local_init_op.
+I1106 11:29:31.345830 281472975208464 session_manager.py:502] Done running local_init_op.
+2020-11-06 11:29:31.540670: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 447
+2020-11-06 11:29:31.540721: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:31.543589: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 447
+2020-11-06 11:29:31.577139: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 447
+2020-11-06 11:29:31.577174: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:31.580080: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 447
+2020-11-06 11:29:31.617346: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:31.618000: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_4 success. [0 ms]
+2020-11-06 11:29:31.618028: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:31.618237: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:31.618249: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:31.618258: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:31.618267: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:31.618292: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:31.618531: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_7 begin.
+2020-11-06 11:29:31.618543: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:31.618550: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:31.619444: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:31.619852: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [0 ms]
+2020-11-06 11:29:31.643465: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 1
+2020-11-06 11:29:31.643488: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 450, max nodes count: 442 in subgraph: GeOp7_0 minGroupSize: 1
+2020-11-06 11:29:31.643679: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_7 markForPartition success.
+2020-11-06 11:29:31.648285: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:31.657590: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_7 SubgraphsInFunctions success.
+2020-11-06 11:29:31.657616: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_7 success. [39 ms]
+2020-11-06 11:29:31.657690: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:31.657701: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:31.657711: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:31.660990: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:31.661345: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:31.661394: I tf_adapter/util/ge_plugin.cc:69] [GePlugin] Ge has already initialized
+2020-11-06 11:29:31.661405: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:31.661426: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [0 ms]
+2020-11-06 11:29:31.661569: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:31.661605: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp7_0 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:31.661613: I tf_adapter/util/session_manager.cc:50] tf session directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:31.661619: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:31.661626: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp7_0, num_inputs:0, num_outputs:1
+2020-11-06 11:29:31.661634: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 31 does not build yet, no need to check rebuild
+2020-11-06 11:29:31.661862: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:31.661875: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp7_0.
+2020-11-06 11:29:31.666462: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp7_0 success.
+2020-11-06 11:29:31.669186: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp7_0 success.
+2020-11-06 11:29:31.670975: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:31.670996: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:31.673330: W tf_adapter/util/infershape_util.cc:326] The shape of node report_uninitialized_variables/boolean_mask/Where output 0 is [?,1], unknown shape.
+2020-11-06 11:29:31.673368: W tf_adapter/util/infershape_util.cc:326] The shape of node report_uninitialized_variables/boolean_mask/Squeeze output 0 is [?], unknown shape.
+2020-11-06 11:29:31.673385: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:31.680368: I tf_adapter/util/infershape_util.cc:127] GEOP::IsInitializedGraph
+2020-11-06 11:29:31.822894: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 7
+2020-11-06 11:29:31.822942: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:31.822988: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 7
+2020-11-06 11:29:31.823564: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 7
+2020-11-06 11:29:31.823585: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:31.823627: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 7
+2020-11-06 11:29:31.853392: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:31.854313: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_5 success. [0 ms]
+2020-11-06 11:29:31.854344: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:31.854377: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:31.854386: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:31.854395: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:31.854404: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:31.854427: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:31.854488: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_9 begin.
+2020-11-06 11:29:31.854496: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:31.854502: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:31.854536: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:31.854572: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [0 ms]
+2020-11-06 11:29:31.854672: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 1
+2020-11-06 11:29:31.854683: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 10, max nodes count: 7 in subgraph: GeOp9_0 minGroupSize: 1
+2020-11-06 11:29:31.854695: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_9 markForPartition success.
+2020-11-06 11:29:31.854843: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:31.855522: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_9 SubgraphsInFunctions success.
+2020-11-06 11:29:31.855553: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_9 success. [1 ms]
+2020-11-06 11:29:31.855640: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:31.855653: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:31.855663: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:31.857231: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:31.857433: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:31.857478: I tf_adapter/util/ge_plugin.cc:69] [GePlugin] Ge has already initialized
+2020-11-06 11:29:31.857489: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:31.857508: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [0 ms]
+2020-11-06 11:29:31.857600: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:31.857637: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp9_0 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:31.857645: I tf_adapter/util/session_manager.cc:50] tf session directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:31.857651: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:31.857658: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp9_0, num_inputs:0, num_outputs:1
+2020-11-06 11:29:31.857667: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 41 does not build yet, no need to check rebuild
+2020-11-06 11:29:31.860070: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:31.860094: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp9_0.
+2020-11-06 11:29:31.860240: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp9_0 success.
+2020-11-06 11:29:31.860434: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp9_0 success.
+2020-11-06 11:29:31.860460: I tf_adapter/util/infershape_util.cc:369] in_edges: global_step/cond/Switch_1 --> global_step/cond/Merge
+2020-11-06 11:29:31.860468: I tf_adapter/util/infershape_util.cc:369] in_edges: global_step/cond/read/Switch --> global_step/cond/Merge
+2020-11-06 11:29:31.860527: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:31.860536: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:31.860601: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:31.860881: I tf_adapter/kernels/geop_npu.cc:440] [GEOP] In GEOP computeAsync, kernel_name:GeOp9_0 ,TFadapter cost time: [3 ms]
+2020-11-06 11:29:31.860893: I tf_adapter/kernels/geop_npu.cc:442] [GEOP] TFadpter process graph success, GE parser begin, kernel_name:GeOp9_0 ,tf session: directf96677ec0510e9e8 ,graph id :41
+2020-11-06 11:29:31.865398: I tf_adapter/kernels/geop_npu.cc:508] [GEOP] Tensorflow graph parse to ge graph success, kernel_name:GeOp9_0 ,tf session: directf96677ec0510e9e8 ,graph id: 41
+2020-11-06 11:29:31.865510: I tf_adapter/kernels/geop_npu.cc:539] [GEOP] Add graph to ge session success, kernel_name:GeOp9_0 ,tf session: directf96677ec0510e9e8 ,graph id:41
+2020-11-06 11:29:31.865613: I tf_adapter/kernels/geop_npu.cc:580] [GEOP] Call ge session RunGraphAsync, kernel_name:GeOp9_0 ,tf session: directf96677ec0510e9e8 ,graph id: 41
+2020-11-06 11:29:31.865691: I tf_adapter/kernels/geop_npu.cc:593] [GEOP] End GeOp::ComputeAsync, kernel_name:GeOp9_0, ret_status:success ,tf session: directf96677ec0510e9e8 ,graph id: 41 [8 ms]
+2020-11-06 11:29:31.977638: I tf_adapter/kernels/geop_npu.cc:76] BuildOutputTensorInfo, num_outputs:1
+2020-11-06 11:29:31.977695: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:0, total_bytes:8, shape:, tensor_ptr:281464641962944, output281464641958240
+2020-11-06 11:29:31.977708: I tf_adapter/kernels/geop_npu.cc:573] [GEOP] RunGraphAsync callback, status:0, kernel_name:GeOp9_0[ 112094us]
+2020-11-06 11:29:32.268517: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:32.268657: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:32.282502: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:32.282584: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:35.380977: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:35.381123: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:35.472038: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129351604662175374
+2020-11-06 11:29:35.473790: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:35.473885: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:35.486805: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:35.486901: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:35.569979: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:35.570068: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/MA-keypointnet-09-27-20-00.log
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/MA-keypointnet-09-27-20-00.log
+[ModelArts Service Log]modelarts-pipe: will write log file /tmp/log/MA-keypointnet-09-27-20-00.log
+[ModelArts Service Log]modelarts-pipe: param for max log length: 1073741824
+[ModelArts Service Log]modelarts-pipe: param for whether exit on overflow: 0
+[ModelArts Service Log]modelarts-pipe: total length: 24
+[ModelArts Service Log]modelarts-pipe: will create log file /tmp/log/MA-keypointnet-09-27-20-00.log
+[ModelArts Service Log]modelarts-pipe: will write log file /tmp/log/MA-keypointnet-09-27-20-00.log
+[ModelArts Service Log]modelarts-pipe: param for max log length: 1073741824
+[ModelArts Service Log]modelarts-pipe: param for whether exit on overflow: 0
+INFO:tensorflow:Saving checkpoints for 0 into s3://keypointnet-train/saved_ckpt/model.ckpt.
+I1106 11:29:36.651366 281472975208464 basic_session_run_hooks.py:606] Saving checkpoints for 0 into s3://keypointnet-train/saved_ckpt/model.ckpt.
+2020-11-06 11:29:36.831685: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 228
+2020-11-06 11:29:36.831733: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:36.833490: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 228
+2020-11-06 11:29:36.852442: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 228
+2020-11-06 11:29:36.852469: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:36.854155: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 228
+2020-11-06 11:29:36.888103: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:36.888657: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_6 success. [0 ms]
+2020-11-06 11:29:36.888682: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:36.888807: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:36.888819: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:36.888828: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:36.888837: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:36.888861: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:36.889016: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_11 begin.
+2020-11-06 11:29:36.889026: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:36.889032: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:36.889483: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:36.889682: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: StringJoin is not in white list, so currently not support
+2020-11-06 11:29:36.889705: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: ShardedFilename is not in white list, so currently not support
+2020-11-06 11:29:36.889720: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: SaveV2 is not in white list, so currently not support
+2020-11-06 11:29:36.889731: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: MergeV2Checkpoints is not in white list, so currently not support
+2020-11-06 11:29:36.889759: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [0 ms]
+2020-11-06 11:29:36.911791: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 213
+2020-11-06 11:29:36.911814: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 229, max nodes count: 1 in subgraph: GeOp11_64 minGroupSize: 1
+2020-11-06 11:29:36.922804: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:641] TFadapter merge clusters cost: [10 ms]
+2020-11-06 11:29:36.924848: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_11 markForPartition success.
+2020-11-06 11:29:36.930616: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:36.938837: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_11 SubgraphsInFunctions success.
+2020-11-06 11:29:36.938865: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_11 success. [49 ms]
+2020-11-06 11:29:36.939016: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:36.939031: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:36.939042: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:36.944036: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:36.944703: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:36.944754: I tf_adapter/util/ge_plugin.cc:69] [GePlugin] Ge has already initialized
+2020-11-06 11:29:36.944766: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:36.944786: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [0 ms]
+2020-11-06 11:29:36.945065: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:36.945106: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp11_64 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:36.945115: I tf_adapter/util/session_manager.cc:50] tf session directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:36.945121: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:36.945128: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp11_64, num_inputs:0, num_outputs:213
+2020-11-06 11:29:36.945136: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 51 does not build yet, no need to check rebuild
+2020-11-06 11:29:36.945207: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:36.945217: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp11_64.
+2020-11-06 11:29:36.949840: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp11_64 success.
+2020-11-06 11:29:36.952824: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp11_64 success.
+2020-11-06 11:29:36.955030: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:36.955054: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:36.957480: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:36.970348: I tf_adapter/kernels/geop_npu.cc:440] [GEOP] In GEOP computeAsync, kernel_name:GeOp11_64 ,TFadapter cost time: [25 ms]
+2020-11-06 11:29:36.970378: I tf_adapter/kernels/geop_npu.cc:442] [GEOP] TFadpter process graph success, GE parser begin, kernel_name:GeOp11_64 ,tf session: directf96677ec0510e9e8 ,graph id :51
+2020-11-06 11:29:37.060662: I tf_adapter/kernels/geop_npu.cc:508] [GEOP] Tensorflow graph parse to ge graph success, kernel_name:GeOp11_64 ,tf session: directf96677ec0510e9e8 ,graph id: 51
+2020-11-06 11:29:37.061376: I tf_adapter/kernels/geop_npu.cc:539] [GEOP] Add graph to ge session success, kernel_name:GeOp11_64 ,tf session: directf96677ec0510e9e8 ,graph id:51
+2020-11-06 11:29:37.063503: I tf_adapter/kernels/geop_npu.cc:580] [GEOP] Call ge session RunGraphAsync, kernel_name:GeOp11_64 ,tf session: directf96677ec0510e9e8 ,graph id: 51
+2020-11-06 11:29:37.063602: I tf_adapter/kernels/geop_npu.cc:593] [GEOP] End GeOp::ComputeAsync, kernel_name:GeOp11_64, ret_status:success ,tf session: directf96677ec0510e9e8 ,graph id: 51 [118 ms]
+2020-11-06 11:29:37.435617: I tf_adapter/kernels/geop_npu.cc:76] BuildOutputTensorInfo, num_outputs:213
+2020-11-06 11:29:37.435673: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:0, total_bytes:8, shape: 2, tensor_ptr:281465917484480, output281465917020608
+2020-11-06 11:29:37.435685: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:1, total_bytes:8, shape: 2, tensor_ptr:281465917484736, output281465917433600
+2020-11-06 11:29:37.435694: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:2, total_bytes:8, shape: 2, tensor_ptr:281465917484928, output281465917433568
+2020-11-06 11:29:37.435712: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:3, total_bytes:2304, shape: 3 3 32 2, tensor_ptr:281465917508224, output281465917358544
+2020-11-06 11:29:37.435724: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:4, total_bytes:2304, shape: 3 3 32 2, tensor_ptr:281465917510656, output281465917372736
+2020-11-06 11:29:37.435739: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:5, total_bytes:2304, shape: 3 3 32 2, tensor_ptr:281465923790528, output281465917468144
+2020-11-06 11:29:37.435749: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:6, total_bytes:128, shape: 32, tensor_ptr:281465917406272, output281465917247280
+2020-11-06 11:29:37.435756: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:7, total_bytes:128, shape: 32, tensor_ptr:281465917358080, output281465917360864
+2020-11-06 11:29:37.435763: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:8, total_bytes:128, shape: 32, tensor_ptr:281465917406592, output281465917470464
+2020-11-06 11:29:37.435771: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:9, total_bytes:128, shape: 32, tensor_ptr:281465917363008, output281465917490608
+2020-11-06 11:29:37.435778: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:10, total_bytes:128, shape: 32, tensor_ptr:281465917240256, output281465917490752
+2020-11-06 11:29:37.435786: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:11, total_bytes:3456, shape: 3 3 3 32, tensor_ptr:281465923792960, output281465917421968
+2020-11-06 11:29:37.435799: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:12, total_bytes:3456, shape: 3 3 3 32, tensor_ptr:281465923796544, output281465917411856
+2020-11-06 11:29:37.435813: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:13, total_bytes:3456, shape: 3 3 3 32, tensor_ptr:281465923800128, output281465917351568
+2020-11-06 11:29:37.435822: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:14, total_bytes:128, shape: 32, tensor_ptr:281465917461824, output281465917016672
+2020-11-06 11:29:37.435829: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:15, total_bytes:128, shape: 32, tensor_ptr:281465917248448, output281465917470608
+2020-11-06 11:29:37.435837: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:16, total_bytes:128, shape: 32, tensor_ptr:281465917460544, output281465917470752
+2020-11-06 11:29:37.435844: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:17, total_bytes:128, shape: 32, tensor_ptr:281465917417920, output281465917415600
+2020-11-06 11:29:37.435851: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:18, total_bytes:128, shape: 32, tensor_ptr:281465917481792, output281465917491088
+2020-11-06 11:29:37.435864: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:19, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465923803648, output281465917514352
+2020-11-06 11:29:37.435895: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:20, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465923840640, output281465917551232
+2020-11-06 11:29:37.435925: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:21, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465923877632, output281465917588112
+2020-11-06 11:29:37.435957: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:22, total_bytes:128, shape: 32, tensor_ptr:281465917351104, output281465917491232
+2020-11-06 11:29:37.435964: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:23, total_bytes:128, shape: 32, tensor_ptr:281465917462784, output281465917491376
+2020-11-06 11:29:37.435971: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:24, total_bytes:128, shape: 32, tensor_ptr:281465917484992, output281465917491520
+2020-11-06 11:29:37.435978: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:25, total_bytes:128, shape: 32, tensor_ptr:281465917485440, output281465917342368
+2020-11-06 11:29:37.435985: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:26, total_bytes:128, shape: 32, tensor_ptr:281465917513024, output281465917342512
+2020-11-06 11:29:37.435996: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:27, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465923914624, output281465917624992
+2020-11-06 11:29:37.436028: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:28, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465923951616, output281465917661872
+2020-11-06 11:29:37.436056: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:29, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465923988608, output281465917698752
+2020-11-06 11:29:37.436083: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:30, total_bytes:128, shape: 32, tensor_ptr:281465917462976, output281465917342656
+2020-11-06 11:29:37.436091: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:31, total_bytes:128, shape: 32, tensor_ptr:281465917513344, output281465917342800
+2020-11-06 11:29:37.436097: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:32, total_bytes:128, shape: 32, tensor_ptr:281465917513600, output281465917342976
+2020-11-06 11:29:37.436104: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:33, total_bytes:128, shape: 32, tensor_ptr:281465917514048, output281465917389984
+2020-11-06 11:29:37.436111: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:34, total_bytes:128, shape: 32, tensor_ptr:281465924025600, output281465917390128
+2020-11-06 11:29:37.436122: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:35, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924025856, output281465917735632
+2020-11-06 11:29:37.436150: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:36, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924062848, output281465917772512
+2020-11-06 11:29:37.436181: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:37, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924099840, output281465917809392
+2020-11-06 11:29:37.436211: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:38, total_bytes:128, shape: 32, tensor_ptr:281465924136832, output281465917490320
+2020-11-06 11:29:37.436221: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:39, total_bytes:128, shape: 32, tensor_ptr:281465924137088, output281465917490464
+2020-11-06 11:29:37.436228: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:40, total_bytes:128, shape: 32, tensor_ptr:281465924137344, output281465917390272
+2020-11-06 11:29:37.436235: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:41, total_bytes:128, shape: 32, tensor_ptr:281465924137600, output281465917390416
+2020-11-06 11:29:37.436242: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:42, total_bytes:128, shape: 32, tensor_ptr:281465924137856, output281465917390560
+2020-11-06 11:29:37.436253: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:43, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924138112, output281465917846272
+2020-11-06 11:29:37.436288: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:44, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924175104, output281465917883152
+2020-11-06 11:29:37.436319: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:45, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924212096, output281465917920032
+2020-11-06 11:29:37.436346: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:46, total_bytes:128, shape: 32, tensor_ptr:281465924249088, output281465917340640
+2020-11-06 11:29:37.436356: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:47, total_bytes:128, shape: 32, tensor_ptr:281465924249344, output281465917340784
+2020-11-06 11:29:37.436363: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:48, total_bytes:128, shape: 32, tensor_ptr:281465924249600, output281465917340960
+2020-11-06 11:29:37.436370: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:49, total_bytes:128, shape: 32, tensor_ptr:281465924249856, output281465917341136
+2020-11-06 11:29:37.436376: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:50, total_bytes:128, shape: 32, tensor_ptr:281465924250112, output281465917341312
+2020-11-06 11:29:37.436387: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:51, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924250368, output281465917956912
+2020-11-06 11:29:37.436417: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:52, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924287360, output281465917993792
+2020-11-06 11:29:37.436447: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:53, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924324352, output281465918030672
+2020-11-06 11:29:37.436476: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:54, total_bytes:128, shape: 32, tensor_ptr:281465924361344, output281465917341488
+2020-11-06 11:29:37.436485: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:55, total_bytes:128, shape: 32, tensor_ptr:281465924361600, output281465917341664
+2020-11-06 11:29:37.436492: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:56, total_bytes:128, shape: 32, tensor_ptr:281465924361856, output281465917341840
+2020-11-06 11:29:37.436501: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:57, total_bytes:128, shape: 32, tensor_ptr:281465924362112, output281465917342016
+2020-11-06 11:29:37.436508: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:58, total_bytes:128, shape: 32, tensor_ptr:281465924362368, output281465917434560
+2020-11-06 11:29:37.436518: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:59, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924362624, output281465918067552
+2020-11-06 11:29:37.436549: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:60, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924399616, output281465918104432
+2020-11-06 11:29:37.436584: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:61, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924436608, output281465918141312
+2020-11-06 11:29:37.436613: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:62, total_bytes:128, shape: 32, tensor_ptr:281465924473600, output281465917434736
+2020-11-06 11:29:37.436622: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:63, total_bytes:128, shape: 32, tensor_ptr:281465924473856, output281465917434912
+2020-11-06 11:29:37.436629: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:64, total_bytes:128, shape: 32, tensor_ptr:281465924474112, output281465917435088
+2020-11-06 11:29:37.436636: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:65, total_bytes:128, shape: 32, tensor_ptr:281465924474368, output281465917432736
+2020-11-06 11:29:37.436643: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:66, total_bytes:128, shape: 32, tensor_ptr:281465924474624, output281465917432880
+2020-11-06 11:29:37.436653: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:67, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924474880, output281465918184352
+2020-11-06 11:29:37.436683: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:68, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924511872, output281465918221232
+2020-11-06 11:29:37.436712: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:69, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924548864, output281465918258112
+2020-11-06 11:29:37.436741: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:70, total_bytes:128, shape: 32, tensor_ptr:281465924585856, output281465917389312
+2020-11-06 11:29:37.436750: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:71, total_bytes:128, shape: 32, tensor_ptr:281465924586112, output281465917415328
+2020-11-06 11:29:37.436757: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:72, total_bytes:128, shape: 32, tensor_ptr:281465924586368, output281465917389568
+2020-11-06 11:29:37.436764: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:73, total_bytes:128, shape: 32, tensor_ptr:281465924586624, output281465917389712
+2020-11-06 11:29:37.436771: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:74, total_bytes:128, shape: 32, tensor_ptr:281465924586880, output281465917487152
+2020-11-06 11:29:37.436781: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:75, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924587136, output281465918294992
+2020-11-06 11:29:37.436812: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:76, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924624128, output281465918331872
+2020-11-06 11:29:37.436840: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:77, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924661120, output281465918368752
+2020-11-06 11:29:37.436876: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:78, total_bytes:128, shape: 32, tensor_ptr:281465924698112, output281465917487296
+2020-11-06 11:29:37.436886: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:79, total_bytes:128, shape: 32, tensor_ptr:281465924698368, output281465917487440
+2020-11-06 11:29:37.436893: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:80, total_bytes:128, shape: 32, tensor_ptr:281465924698624, output281465917487584
+2020-11-06 11:29:37.436899: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:81, total_bytes:128, shape: 32, tensor_ptr:281465924698880, output281465917487728
+2020-11-06 11:29:37.436906: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:82, total_bytes:128, shape: 32, tensor_ptr:281465924699136, output281465917487872
+2020-11-06 11:29:37.436916: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:83, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924699392, output281465918405632
+2020-11-06 11:29:37.436946: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:84, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924736384, output281465918442512
+2020-11-06 11:29:37.436976: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:85, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924773376, output281465918479392
+2020-11-06 11:29:37.437005: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:86, total_bytes:128, shape: 32, tensor_ptr:281465924810368, output281465917488016
+2020-11-06 11:29:37.437014: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:87, total_bytes:128, shape: 32, tensor_ptr:281465924810624, output281465917488160
+2020-11-06 11:29:37.437021: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:88, total_bytes:128, shape: 32, tensor_ptr:281465924810880, output281465917488304
+2020-11-06 11:29:37.437028: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:89, total_bytes:128, shape: 32, tensor_ptr:281465924811136, output281465917488448
+2020-11-06 11:29:37.437034: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:90, total_bytes:128, shape: 32, tensor_ptr:281465924811392, output281465917488592
+2020-11-06 11:29:37.437045: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:91, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924811648, output281465918516272
+2020-11-06 11:29:37.437073: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:92, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924848640, output281465918553152
+2020-11-06 11:29:37.437105: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:93, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924885632, output281465918590032
+2020-11-06 11:29:37.437133: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:94, total_bytes:128, shape: 32, tensor_ptr:281465924922624, output281465917488736
+2020-11-06 11:29:37.437142: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:95, total_bytes:128, shape: 32, tensor_ptr:281465924922880, output281465917488880
+2020-11-06 11:29:37.437149: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:96, total_bytes:128, shape: 32, tensor_ptr:281465924923136, output281465917363328
+2020-11-06 11:29:37.437159: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:97, total_bytes:128, shape: 32, tensor_ptr:281465924923392, output281465917363472
+2020-11-06 11:29:37.437166: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:98, total_bytes:128, shape: 32, tensor_ptr:281465924923648, output281465917363648
+2020-11-06 11:29:37.437176: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:99, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924923904, output281465918626912
+2020-11-06 11:29:37.437211: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:100, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924960896, output281465918663792
+2020-11-06 11:29:37.437243: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:101, total_bytes:36864, shape: 3 3 32 32, tensor_ptr:281465924997888, output281465918700672
+2020-11-06 11:29:37.437270: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:102, total_bytes:40, shape: 10, tensor_ptr:281465917485760, output281465917389520
+2020-11-06 11:29:37.437280: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:103, total_bytes:40, shape: 10, tensor_ptr:281465917363968, output281465917433936
+2020-11-06 11:29:37.437287: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:104, total_bytes:40, shape: 10, tensor_ptr:281465917020288, output281465917433984
+2020-11-06 11:29:37.437300: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:105, total_bytes:23040, shape: 3 3 64 10, tensor_ptr:281465925034880, output281465918737552
+2020-11-06 11:29:37.437322: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:106, total_bytes:23040, shape: 3 3 64 10, tensor_ptr:281465925058048, output281465918760608
+2020-11-06 11:29:37.437344: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:107, total_bytes:23040, shape: 3 3 64 10, tensor_ptr:281465925081216, output281465918783664
+2020-11-06 11:29:37.437364: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:108, total_bytes:40, shape: 10, tensor_ptr:281465917343232, output281465917433056
+2020-11-06 11:29:37.437374: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:109, total_bytes:40, shape: 10, tensor_ptr:281465917322432, output281465917389904
+2020-11-06 11:29:37.437381: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:110, total_bytes:40, shape: 10, tensor_ptr:281465917315840, output281465917363824
+2020-11-06 11:29:37.437391: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:111, total_bytes:23040, shape: 3 3 64 10, tensor_ptr:281465925104384, output281465918806720
+2020-11-06 11:29:37.437418: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:112, total_bytes:23040, shape: 3 3 64 10, tensor_ptr:281465925127552, output281465918829776
+2020-11-06 11:29:37.437442: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:113, total_bytes:23040, shape: 3 3 64 10, tensor_ptr:281465925150720, output281465918852832
+2020-11-06 11:29:37.437463: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:114, total_bytes:256, shape: 64, tensor_ptr:281465925173888, output281465917309936
+2020-11-06 11:29:37.437472: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:115, total_bytes:256, shape: 64, tensor_ptr:281465925174272, output281465917463328
+2020-11-06 11:29:37.437480: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:116, total_bytes:256, shape: 64, tensor_ptr:281465925174656, output281465917364128
+2020-11-06 11:29:37.437487: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:117, total_bytes:256, shape: 64, tensor_ptr:281465925175040, output281465917364432
+2020-11-06 11:29:37.437493: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:118, total_bytes:256, shape: 64, tensor_ptr:281465925175424, output281465917364736
+2020-11-06 11:29:37.437505: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:119, total_bytes:9216, shape: 3 3 4 64, tensor_ptr:281465925175808, output281465918875888
+2020-11-06 11:29:37.437520: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:120, total_bytes:9216, shape: 3 3 4 64, tensor_ptr:281465925185152, output281465918885120
+2020-11-06 11:29:37.437540: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:121, total_bytes:9216, shape: 3 3 4 64, tensor_ptr:281465925194496, output281465918894352
+2020-11-06 11:29:37.437551: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:122, total_bytes:256, shape: 64, tensor_ptr:281465925203840, output281465917455696
+2020-11-06 11:29:37.437558: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:123, total_bytes:256, shape: 64, tensor_ptr:281465925204224, output281465917456000
+2020-11-06 11:29:37.437565: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:124, total_bytes:256, shape: 64, tensor_ptr:281465925204608, output281465917456304
+2020-11-06 11:29:37.437572: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:125, total_bytes:256, shape: 64, tensor_ptr:281465925204992, output281465917456608
+2020-11-06 11:29:37.437578: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:126, total_bytes:256, shape: 64, tensor_ptr:281465925205376, output281465917456912
+2020-11-06 11:29:37.437589: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:127, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465925205760, output281465918903584
+2020-11-06 11:29:37.437679: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:128, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465925353344, output281465919051056
+2020-11-06 11:29:37.437777: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:129, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465925500928, output281465919216992
+2020-11-06 11:29:37.437866: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:130, total_bytes:256, shape: 64, tensor_ptr:281465925648512, output281465917388960
+2020-11-06 11:29:37.437876: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:131, total_bytes:256, shape: 64, tensor_ptr:281465925648896, output281465917435872
+2020-11-06 11:29:37.437884: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:132, total_bytes:256, shape: 64, tensor_ptr:281465925649280, output281465917436144
+2020-11-06 11:29:37.437891: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:133, total_bytes:256, shape: 64, tensor_ptr:281465925649664, output281465917431584
+2020-11-06 11:29:37.437898: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:134, total_bytes:256, shape: 64, tensor_ptr:281465925650048, output281465917431856
+2020-11-06 11:29:37.437909: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:135, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465925650432, output281465919364464
+2020-11-06 11:29:37.438006: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:136, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465925798016, output281465919511936
+2020-11-06 11:29:37.438098: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:137, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465925945600, output281465919659408
+2020-11-06 11:29:37.438193: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:138, total_bytes:256, shape: 64, tensor_ptr:281465926093184, output281465917432128
+2020-11-06 11:29:37.438203: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:139, total_bytes:256, shape: 64, tensor_ptr:281465926093568, output281465917432400
+2020-11-06 11:29:37.438211: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:140, total_bytes:256, shape: 64, tensor_ptr:281465926093952, output281465917402144
+2020-11-06 11:29:37.438218: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:141, total_bytes:256, shape: 64, tensor_ptr:281465926094336, output281465917402416
+2020-11-06 11:29:37.438228: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:142, total_bytes:256, shape: 64, tensor_ptr:281465926094720, output281465917402688
+2020-11-06 11:29:37.438240: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:143, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926095104, output281465919806880
+2020-11-06 11:29:37.438334: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:144, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926242688, output281465919954352
+2020-11-06 11:29:37.438426: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:145, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926390272, output281465920101824
+2020-11-06 11:29:37.438520: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:146, total_bytes:256, shape: 64, tensor_ptr:281465926537856, output281465917402960
+2020-11-06 11:29:37.438531: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:147, total_bytes:256, shape: 64, tensor_ptr:281465926538240, output281465917403232
+2020-11-06 11:29:37.438538: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:148, total_bytes:256, shape: 64, tensor_ptr:281465926538624, output281465917403504
+2020-11-06 11:29:37.438546: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:149, total_bytes:256, shape: 64, tensor_ptr:281465926539008, output281465917403776
+2020-11-06 11:29:37.438552: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:150, total_bytes:256, shape: 64, tensor_ptr:281465926539392, output281465917404048
+2020-11-06 11:29:37.438563: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:151, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926539776, output281465920249296
+2020-11-06 11:29:37.438652: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:152, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926687360, output281465920396768
+2020-11-06 11:29:37.438753: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:153, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926834944, output281465920544240
+2020-11-06 11:29:37.438842: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:154, total_bytes:256, shape: 64, tensor_ptr:281465926982528, output281465917404320
+2020-11-06 11:29:37.438852: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:155, total_bytes:256, shape: 64, tensor_ptr:281465926982912, output281465917404592
+2020-11-06 11:29:37.438860: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:156, total_bytes:256, shape: 64, tensor_ptr:281465926983296, output281465917404864
+2020-11-06 11:29:37.438870: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:157, total_bytes:256, shape: 64, tensor_ptr:281465926983680, output281465917405136
+2020-11-06 11:29:37.438877: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:158, total_bytes:256, shape: 64, tensor_ptr:281465926984064, output281465917405408
+2020-11-06 11:29:37.438888: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:159, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465926984448, output281465920691712
+2020-11-06 11:29:37.438981: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:160, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465927132032, output281465920839184
+2020-11-06 11:29:37.439078: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:161, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465927279616, output281465920986656
+2020-11-06 11:29:37.439168: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:162, total_bytes:256, shape: 64, tensor_ptr:281465927427200, output281465917405680
+2020-11-06 11:29:37.439178: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:163, total_bytes:256, shape: 64, tensor_ptr:281465927427584, output281465917405952
+2020-11-06 11:29:37.439185: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:164, total_bytes:256, shape: 64, tensor_ptr:281465927427968, output281465918178192
+2020-11-06 11:29:37.439192: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:165, total_bytes:256, shape: 64, tensor_ptr:281465927428352, output281465918178464
+2020-11-06 11:29:37.439199: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:166, total_bytes:256, shape: 64, tensor_ptr:281465927428736, output281465918178736
+2020-11-06 11:29:37.439211: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:167, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465927429120, output281465921134128
+2020-11-06 11:29:37.439307: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:168, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465927576704, output281465921281600
+2020-11-06 11:29:37.439400: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:169, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465927724288, output281465921429072
+2020-11-06 11:29:37.439494: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:170, total_bytes:256, shape: 64, tensor_ptr:281465927871872, output281465918179008
+2020-11-06 11:29:37.439507: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:171, total_bytes:256, shape: 64, tensor_ptr:281465927872256, output281465918179280
+2020-11-06 11:29:37.439515: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:172, total_bytes:256, shape: 64, tensor_ptr:281465927872640, output281465918179552
+2020-11-06 11:29:37.439521: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:173, total_bytes:256, shape: 64, tensor_ptr:281465927873024, output281465918179824
+2020-11-06 11:29:37.439528: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:174, total_bytes:256, shape: 64, tensor_ptr:281465927873408, output281465918180096
+2020-11-06 11:29:37.439555: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:175, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465927873792, output281465921576544
+2020-11-06 11:29:37.439647: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:176, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928021376, output281465921724016
+2020-11-06 11:29:37.439744: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:177, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928168960, output281465921871488
+2020-11-06 11:29:37.439838: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:178, total_bytes:256, shape: 64, tensor_ptr:281465928316544, output281465918180400
+2020-11-06 11:29:37.439849: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:179, total_bytes:256, shape: 64, tensor_ptr:281465928316928, output281465918180704
+2020-11-06 11:29:37.439856: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:180, total_bytes:256, shape: 64, tensor_ptr:281465928317312, output281465918181008
+2020-11-06 11:29:37.439863: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:181, total_bytes:256, shape: 64, tensor_ptr:281465928317696, output281465918181312
+2020-11-06 11:29:37.439870: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:182, total_bytes:256, shape: 64, tensor_ptr:281465928318080, output281465918181616
+2020-11-06 11:29:37.439880: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:183, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928318464, output281465922018960
+2020-11-06 11:29:37.439972: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:184, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928466048, output281465922166432
+2020-11-06 11:29:37.440070: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:185, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928613632, output281465922313904
+2020-11-06 11:29:37.440165: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:186, total_bytes:256, shape: 64, tensor_ptr:281465928761216, output281465918181920
+2020-11-06 11:29:37.440175: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:187, total_bytes:256, shape: 64, tensor_ptr:281465928761600, output281465918182192
+2020-11-06 11:29:37.440182: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:188, total_bytes:256, shape: 64, tensor_ptr:281465928761984, output281465918182496
+2020-11-06 11:29:37.440189: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:189, total_bytes:256, shape: 64, tensor_ptr:281465928762368, output281465918182800
+2020-11-06 11:29:37.440196: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:190, total_bytes:256, shape: 64, tensor_ptr:281465928762752, output281465918183104
+2020-11-06 11:29:37.440206: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:191, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928763136, output281465922461376
+2020-11-06 11:29:37.440305: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:192, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465928910720, output281465922608848
+2020-11-06 11:29:37.440409: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:193, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929058304, output281465922756320
+2020-11-06 11:29:37.440499: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:194, total_bytes:256, shape: 64, tensor_ptr:281465929205888, output281465918183408
+2020-11-06 11:29:37.440509: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:195, total_bytes:256, shape: 64, tensor_ptr:281465929206272, output281465918183680
+2020-11-06 11:29:37.440516: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:196, total_bytes:256, shape: 64, tensor_ptr:281465929206656, output281465918183984
+2020-11-06 11:29:37.440523: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:197, total_bytes:256, shape: 64, tensor_ptr:281465929207040, output281465922903792
+2020-11-06 11:29:37.440529: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:198, total_bytes:256, shape: 64, tensor_ptr:281465929207424, output281465922904064
+2020-11-06 11:29:37.440540: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:199, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929207808, output281465922904336
+2020-11-06 11:29:37.440639: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:200, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929355392, output281465923051808
+2020-11-06 11:29:37.440733: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:201, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929502976, output281465923199280
+2020-11-06 11:29:37.440829: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:202, total_bytes:256, shape: 64, tensor_ptr:281465929650560, output281465923346752
+2020-11-06 11:29:37.440839: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:203, total_bytes:256, shape: 64, tensor_ptr:281465929650944, output281465923347024
+2020-11-06 11:29:37.440846: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:204, total_bytes:256, shape: 64, tensor_ptr:281465929651328, output281465923347296
+2020-11-06 11:29:37.440853: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:205, total_bytes:256, shape: 64, tensor_ptr:281465929651712, output281465923347568
+2020-11-06 11:29:37.440860: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:206, total_bytes:256, shape: 64, tensor_ptr:281465929652096, output281465923347840
+2020-11-06 11:29:37.440870: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:207, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929652480, output281465923348112
+2020-11-06 11:29:37.440964: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:208, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929800064, output281465923495584
+2020-11-06 11:29:37.441062: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:209, total_bytes:147456, shape: 3 3 64 64, tensor_ptr:281465929947648, output281465923643056
+2020-11-06 11:29:37.441159: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:210, total_bytes:4, shape:, tensor_ptr:281465917418112, output281465917433728
+2020-11-06 11:29:37.441170: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:211, total_bytes:4, shape:, tensor_ptr:281465917471168, output281465917363872
+2020-11-06 11:29:37.441177: I tf_adapter/kernels/geop_npu.cc:103] BuildOutputTensorInfo, output index:212, total_bytes:8, shape:, tensor_ptr:281465917472064, output281465917363904
+2020-11-06 11:29:37.441186: I tf_adapter/kernels/geop_npu.cc:573] [GEOP] RunGraphAsync callback, status:0, kernel_name:GeOp11_64[ 377686us]
+2020-11-06 11:29:37.442992: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.443131: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.457513: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129371604662177442
+2020-11-06 11:29:37.476220: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.476379: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.582725: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129371604662177457
+2020-11-06 11:29:37.583906: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.584010: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.597939: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.598061: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.688301: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.688408: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.700643: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.700757: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.713613: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129371604662177700
+2020-11-06 11:29:37.713728: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.713814: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.724977: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.725090: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.740211: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.740313: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.752996: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.753136: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.774406: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129371604662177752
+2020-11-06 11:29:37.774502: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.774604: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.782210: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.782300: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.792836: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.792942: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.802841: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.802944: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.812405: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.812508: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.822679: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.822791: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.832840: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.832948: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.948095: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.948212: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.960945: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.961049: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.983255: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129371604662177960
+2020-11-06 11:29:37.983369: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.983470: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:37.994676: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:37.994765: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.004018: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.004117: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.015108: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.015237: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.026106: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129381604662178014
+2020-11-06 11:29:38.026375: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.026475: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.035955: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.036067: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.059816: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.059914: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.467270: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.467422: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.492567: E tensorflow/core/platform/s3/aws_logging.cc:60] HTTP response code: 404
+Exception name: 
+Error message: No response body.
+9 response headers:
+content-length : 0
+date : Fri, 06 Nov 2020 11:29:38 GMT
+server : OBS
+x-amz-error-code : NoSuchKey
+x-amz-error-detail-key : saved_ckpt
+x-amz-error-message : The specified key does not exist.
+x-amz-id-2 : 32AAAQAAEAABAAAQAAEAABAAAQAAEAABCSo8XJ5RRzxcwnDFMtrce5vEZRTIG9zJ
+x-amz-request-id : 000001759D51B2A447D3969D4DD16DD5
+x-reserved : amazon, aws and amazon web services are trademarks or registered trademarks of Amazon Technologies, Inc
+2020-11-06 11:29:38.492592: W tensorflow/core/platform/s3/aws_logging.cc:57] If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.
+2020-11-06 11:29:38.492715: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.492792: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.645029: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.645171: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.688044: I tensorflow/core/platform/s3/aws_logging.cc:54] Deleting file: /tmp/s3_filesystem_XXXXXX20201106T1129381604662178642
+2020-11-06 11:29:38.688555: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.688647: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.699960: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.700061: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+2020-11-06 11:29:38.741581: I tensorflow/core/platform/s3/aws_logging.cc:54] Found secret key
+2020-11-06 11:29:38.741673: I tensorflow/core/platform/s3/aws_logging.cc:54] Connection has been released. Continuing.
+INFO:tensorflow:Starting log outfeed thread controller.
+I1106 11:29:38.872085 281465615004128 npu_hook.py:200] Starting log outfeed thread controller.
+INFO:tensorflow:Starting log outfeed thread coordinate.
+I1106 11:29:38.874332 281465640182240 npu_hook.py:192] Starting log outfeed thread coordinate.
+INFO:tensorflow:Add log output coordinate thread to coord
+I1106 11:29:38.875286 281472975208464 npu_hook.py:216] Add log output coordinate thread to coord
+WARNING:tensorflow:From /cache/user-job-dir/code/utils.py:52: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+W1106 11:29:38.876597 281472975208464 module_wrapper.py:139] From /cache/user-job-dir/code/utils.py:52: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+WARNING:tensorflow:From /cache/user-job-dir/code/utils.py:53: The name tf.train.SessionRunArgs is deprecated. Please use tf.estimator.SessionRunArgs instead.
+W1106 11:29:38.876882 281472975208464 module_wrapper.py:139] From /cache/user-job-dir/code/utils.py:53: The name tf.train.SessionRunArgs is deprecated. Please use tf.estimator.SessionRunArgs instead.
+2020-11-06 11:29:39.063267: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 3
+2020-11-06 11:29:39.063326: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:39.063366: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 3
+2020-11-06 11:29:39.133866: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:39.134641: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_7 success. [0 ms]
+2020-11-06 11:29:39.134677: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:39.134709: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:39.134719: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:39.134730: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:39.134747: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:39.134795: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:39.134880: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_13 begin.
+2020-11-06 11:29:39.134890: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:39.134896: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:39.134928: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:349] hostcall subgraph will run on host.
+2020-11-06 11:29:39.134957: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 0
+2020-11-06 11:29:39.134973: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_13 markForPartition success.
+2020-11-06 11:29:39.134980: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1853] subgraphNum is 0
+2020-11-06 11:29:39.135033: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:39.135045: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:39.135054: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:39.144239: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:39.144971: I tf_adapter/kernels/infeed_outfeed_ops.cc:117] OutfeedDequeueOp built
+2020-11-06 11:29:40.359590: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 2267
+2020-11-06 11:29:40.359643: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.376885: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 2267
+2020-11-06 11:29:40.749542: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 2255
+2020-11-06 11:29:40.749589: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.768149: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 2255
+2020-11-06 11:29:40.806872: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 5
+2020-11-06 11:29:40.806910: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.806947: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 5
+2020-11-06 11:29:40.807463: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 5
+2020-11-06 11:29:40.807484: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.807517: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 5
+2020-11-06 11:29:40.814103: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 27
+2020-11-06 11:29:40.814129: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.814287: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 27
+2020-11-06 11:29:40.816726: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 27
+2020-11-06 11:29:40.816750: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.816912: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 27
+2020-11-06 11:29:40.824108: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 19
+2020-11-06 11:29:40.824132: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.824338: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 19
+2020-11-06 11:29:40.828122: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:247] INFO: GradFusionOptimizer::Optimize begin, OriginNodeNum: 19
+2020-11-06 11:29:40.828147: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:248] INFO: FUSION_TENSOR_SIZE: 524288000
+2020-11-06 11:29:40.828354: I tf_adapter/optimizers/gradient_fusion_optimizer.cc:299] INFO: GradFusionOptimizer::Optimize end, finalNodeNum: 19
+2020-11-06 11:29:40.878630: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is localhost
+2020-11-06 11:29:40.880261: I tf_adapter/optimizers/get_attr_optimize_pass.cc:128] GetAttrOptimizePass_8 success. [0 ms]
+2020-11-06 11:29:40.880294: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is localhost Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:40.881318: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:102] mix_compile_mode is False
+2020-11-06 11:29:40.881337: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:103] iterations_per_loop is 1
+2020-11-06 11:29:40.881346: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_flat_map_read_one_file_30]
+2020-11-06 11:29:40.881355: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [__inference_Dataset_map_parser_72]
+2020-11-06 11:29:40.881370: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:108] Mark function as no need optimize [_make_dataset_ZWHHOgJpjsU]
+2020-11-06 11:29:40.882435: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1763] OMPartition subgraph_15 begin.
+2020-11-06 11:29:40.882453: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1764] mix_compile_mode is False
+2020-11-06 11:29:40.882460: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1765] iterations_per_loop is 1
+2020-11-06 11:29:40.882748: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1790] begin split _UnaryOpsComposition.
+2020-11-06 11:29:40.882768: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1803] op_names node_list: 0 is node: Log
+2020-11-06 11:29:40.882806: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1809] Log has built success.
+2020-11-06 11:29:40.882818: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1803] op_names node_list: 1 is node: Neg
+2020-11-06 11:29:40.883018: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1809] Neg has built success.
+2020-11-06 11:29:40.883031: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1813] begin add edge 
+2020-11-06 11:29:40.883046: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1790] begin split _UnaryOpsComposition.
+2020-11-06 11:29:40.883057: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1803] op_names node_list: 0 is node: Log
+2020-11-06 11:29:40.883073: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1809] Log has built success.
+2020-11-06 11:29:40.883082: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1803] op_names node_list: 1 is node: Neg
+2020-11-06 11:29:40.883096: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1809] Neg has built success.
+2020-11-06 11:29:40.883102: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1813] begin add edge 
+2020-11-06 11:29:40.883163: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1790] begin split _UnaryOpsComposition.
+2020-11-06 11:29:40.883175: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1803] op_names node_list: 0 is node: Sqrt
+2020-11-06 11:29:40.883193: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1809] Sqrt has built success.
+2020-11-06 11:29:40.883202: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1803] op_names node_list: 1 is node: Reciprocal
+2020-11-06 11:29:40.883215: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1809] Reciprocal has built success.
+2020-11-06 11:29:40.883221: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1813] begin add edge 
+2020-11-06 11:29:40.887763: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:354] FindNpuSupportCandidates enableDP:1, mix_compile_mode: 0, hasMakeIteratorOp:0, hasIteratorOp:0
+2020-11-06 11:29:40.887814: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887838: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887853: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887862: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887870: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887878: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887887: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887895: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887903: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:290] Const in func can dump
+2020-11-06 11:29:40.887919: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: TensorSliceDataset is not in white list, so currently not support
+2020-11-06 11:29:40.888307: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:376] IteratorGetNext has in nodes OneShotIterator
+2020-11-06 11:29:40.888495: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: ImageSummary is not in white list, so currently not support
+2020-11-06 11:29:40.888537: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: ScalarSummary is not in white list, so currently not support
+2020-11-06 11:29:40.889730: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:228] node: MergeSummary is not in white list, so currently not support
+2020-11-06 11:29:40.890370: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:484] TFadapter find Npu support candidates cost: [3 ms]
+2020-11-06 11:29:40.971994: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:863] cluster Num is 1
+2020-11-06 11:29:40.972019: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:870] All nodes in graph: 2265, max nodes count: 2213 in subgraph: GeOp15_0 minGroupSize: 1
+2020-11-06 11:29:40.973046: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1851] OMPartition subgraph_15 markForPartition success.
+2020-11-06 11:29:40.997785: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1494] subgraphNum: 1
+2020-11-06 11:29:41.050996: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1943] OMPartition subgraph_15 SubgraphsInFunctions success.
+2020-11-06 11:29:41.051043: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1954] OMPartition subgraph_15 success. [169 ms]
+2020-11-06 11:29:41.051155: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:509] >>>> DpTfToGEConversionPassImpl::RunPass <<<<
+2020-11-06 11:29:41.051171: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:530] Do not find MakeIterator <- IteratorV2 connects in the graph, pass datapreprocess pass.
+2020-11-06 11:29:41.051183: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:926] DpTfToGEConversionPassImpl Run success. [0 ms]
+2020-11-06 11:29:41.062128: I tf_adapter/optimizers/add_input_pass.cc:96] job is localhost Skip the optimizer : AddInputPass.
+2020-11-06 11:29:41.063371: I tf_adapter/kernels/geop_npu.cc:175] [GEOP] Begin GeOp initialize.
+2020-11-06 11:29:41.063424: I tf_adapter/util/ge_plugin.cc:69] [GePlugin] Ge has already initialized
+2020-11-06 11:29:41.063435: I tf_adapter/kernels/geop_npu.cc:203] [GEOP] GePlugin init success
+2020-11-06 11:29:41.063457: I tf_adapter/kernels/geop_npu.cc:209] [GEOP] GeOp Initialize success, cost: [0 ms]
+2020-11-06 11:29:41.081096: I tf_adapter/optimizers/control_flow_conversion_pass.cc:52] job is default Skip the optimizer : ControlFlowConversionPass.
+2020-11-06 11:29:41.081161: I tf_adapter/optimizers/om_set_var_format_pass.cc:144] job is default Skip the optimizer : SetVarFormatPass.
+2020-11-06 11:29:41.081299: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is default
+2020-11-06 11:29:41.081311: I tf_adapter/optimizers/get_attr_optimize_pass.cc:66] job is default Skip the optimizer : GetAttrOptimizePass.
+2020-11-06 11:29:41.081323: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is default Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:41.081332: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:74] Found mark of noneed optimize on node [compression_type], skip MarkNoNeedOptimizePass.
+2020-11-06 11:29:41.081340: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1720] Found mark of noneed optimize on node [compression_type], skip OMPartitionSubgraphsPass.
+2020-11-06 11:29:41.081347: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:877] Found mark of noneed optimize on node [compression_type], skip DpTfToGEConversionPass.
+2020-11-06 11:29:41.083064: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:74] Found mark of noneed optimize on node [compression_type], skip MarkNoNeedOptimizePass.
+2020-11-06 11:29:41.083091: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1720] Found mark of noneed optimize on node [compression_type], skip OMPartitionSubgraphsPass.
+2020-11-06 11:29:41.083101: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:877] Found mark of noneed optimize on node [compression_type], skip DpTfToGEConversionPass.
+2020-11-06 11:29:41.083108: I tf_adapter/optimizers/add_input_pass.cc:76] Found mark of noneed optimize on node [compression_type], skip AddInputPass.
+2020-11-06 11:29:41.084350: I tf_adapter/optimizers/control_flow_conversion_pass.cc:52] job is default Skip the optimizer : ControlFlowConversionPass.
+2020-11-06 11:29:41.084391: I tf_adapter/optimizers/om_set_var_format_pass.cc:144] job is default Skip the optimizer : SetVarFormatPass.
+2020-11-06 11:29:41.084652: I tf_adapter/optimizers/get_attr_optimize_pass.cc:64] NpuAttrs job is default
+2020-11-06 11:29:41.084666: I tf_adapter/optimizers/get_attr_optimize_pass.cc:66] job is default Skip the optimizer : GetAttrOptimizePass.
+2020-11-06 11:29:41.084678: I tf_adapter/optimizers/mark_start_node_pass.cc:82] job is default Skip the optimizer : MarkStartNodePass.
+2020-11-06 11:29:41.084686: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:74] Found mark of noneed optimize on node [ParseSingleExample/Const], skip MarkNoNeedOptimizePass.
+2020-11-06 11:29:41.084693: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1720] Found mark of noneed optimize on node [ParseSingleExample/Const], skip OMPartitionSubgraphsPass.
+2020-11-06 11:29:41.084700: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:877] Found mark of noneed optimize on node [ParseSingleExample/Const], skip DpTfToGEConversionPass.
+2020-11-06 11:29:41.086766: I tf_adapter/optimizers/mark_noneed_optimize_pass.cc:74] Found mark of noneed optimize on node [ParseSingleExample/Const], skip MarkNoNeedOptimizePass.
+2020-11-06 11:29:41.086793: I tf_adapter/optimizers/om_partition_subgraphs_pass.cc:1720] Found mark of noneed optimize on node [ParseSingleExample/Const], skip OMPartitionSubgraphsPass.
+2020-11-06 11:29:41.086802: I tf_adapter/optimizers/dp_tf_ge_conversion_pass.cc:877] Found mark of noneed optimize on node [ParseSingleExample/Const], skip DpTfToGEConversionPass.
+2020-11-06 11:29:41.086810: I tf_adapter/optimizers/add_input_pass.cc:76] Found mark of noneed optimize on node [ParseSingleExample/Const], skip AddInputPass.
+2020-11-06 11:29:41.185040: I tf_adapter/kernels/geop_npu.cc:364] [GEOP] get tf session directf96677ec0510e9e8 from session handle.
+2020-11-06 11:29:41.185101: I tf_adapter/kernels/geop_npu.cc:375] [GEOP] Node name: GeOp15_0 , tf session: directf96677ec0510e9e8
+2020-11-06 11:29:41.185110: I tf_adapter/util/session_manager.cc:50] tf session directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:41.185118: I tf_adapter/kernels/geop_npu.cc:382] [GEOP] tf session: directf96677ec0510e9e8 get ge session success.
+2020-11-06 11:29:41.185126: I tf_adapter/kernels/geop_npu.cc:388] [GEOP] Begin GeOp::ComputeAsync, kernel_name:GeOp15_0, num_inputs:8, num_outputs:24
+2020-11-06 11:29:41.185143: I tf_adapter/kernels/geop_npu.cc:251] [GEOP] tf session directf96677ec0510e9e8, graph id: 61 does not build yet, no need to check rebuild
+2020-11-06 11:29:41.185188: I tf_adapter/util/infershape_util.cc:346] InferShapeUtil::InferShape
+2020-11-06 11:29:41.185196: I tf_adapter/util/infershape_util.cc:84] The signature name of FunctionDef is GeOp15_0.
+2020-11-06 11:29:41.214746: I tf_adapter/util/infershape_util.cc:96] InstantiateFunction GeOp15_0 success.
+2020-11-06 11:29:41.232025: I tf_adapter/util/infershape_util.cc:101] ConvertNodeDefsToGraph GeOp15_0 success.
+2020-11-06 11:29:41.236868: I tf_adapter/util/infershape_util.cc:369] in_edges: global_step/cond/Switch_1 --> global_step/cond/Merge
+2020-11-06 11:29:41.236905: I tf_adapter/util/infershape_util.cc:369] in_edges: global_step/cond/read/Switch --> global_step/cond/Merge
+2020-11-06 11:29:41.247894: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SOURCE is null.
+2020-11-06 11:29:41.247946: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node _SINK is null.
+2020-11-06 11:29:41.251360: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv0/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.251435: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv0/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.251699: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv1/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.251749: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv1/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.251972: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv2/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252002: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv2/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252178: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv3/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252207: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv3/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252384: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv4/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252412: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv4/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252590: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv5/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252621: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv5/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252742: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv6/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252781: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv6/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252960: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv7/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.252988: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv7/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253159: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv8/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253186: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv8/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253355: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv9/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253381: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv9/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253549: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv10/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253577: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv10/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253697: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/OrientationNetwork/dconv11/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.253736: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/OrientationNetwork/dconv11/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.254338: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv0/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.254393: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv0/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.254557: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv1/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.254610: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv1/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.254838: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv2/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.254879: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv2/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.255154: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv3/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.255218: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv3/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.255517: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv4/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.255603: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv4/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.255869: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv5/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.255941: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv5/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.256103: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv6/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.256174: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv6/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.256472: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv7/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.256532: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv7/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.256810: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv8/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.256871: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv8/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.257184: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv9/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.257258: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv9/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.257529: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv10/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.257601: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv10/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.257768: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork/dconv11/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.257841: W tf_adapter/util/infershape_util.cc:326] The shape of node KeypointNetwork_1/dconv11/BatchNorm/FusedBatchNormV3 output 5 is ?, unknown shape.
+2020-11-06 11:29:41.260748: W tf_adapter/util/infershape_util.cc:304] The InferenceContext of node gradients/concat_4_grad/tuple/group_deps is null.
+2020-11-06 11:29:41.264168: I tf_adapter/util/infershape_util.cc:395] InferShapeUtil::InferShape success
+2020-11-06 11:29:41.382005: I tf_adapter/kernels/geop_npu.cc:440] [GEOP] In GEOP computeAsync, kernel_name:GeOp15_0 ,TFadapter cost time: [196 ms]
+2020-11-06 11:29:41.382062: I tf_adapter/kernels/geop_npu.cc:442] [GEOP] TFadpter process graph success, GE parser begin, kernel_name:GeOp15_0 ,tf session: directf96677ec0510e9e8 ,graph id :61
+2020-11-06 11:29:42.126754: I tf_adapter/kernels/geop_npu.cc:508] [GEOP] Tensorflow graph parse to ge graph success, kernel_name:GeOp15_0 ,tf session: directf96677ec0510e9e8 ,graph id: 61
+2020-11-06 11:29:42.131586: I tf_adapter/kernels/geop_npu.cc:539] [GEOP] Add graph to ge session success, kernel_name:GeOp15_0 ,tf session: directf96677ec0510e9e8 ,graph id:61
+2020-11-06 11:29:42.145962: I tf_adapter/kernels/geop_npu.cc:580] [GEOP] Call ge session RunGraphAsync, kernel_name:GeOp15_0 ,tf session: directf96677ec0510e9e8 ,graph id: 61
+2020-11-06 11:29:42.146133: I tf_adapter/kernels/geop_npu.cc:593] [GEOP] End GeOp::ComputeAsync, kernel_name:GeOp15_0, ret_status:success ,tf session: directf96677ec0510e9e8 ,graph id: 61 [960 ms]
+[ERROR] RUNTIME(821)model execute error, error code=0x91, [the model stream execute failed].
+[ERROR] RUNTIME(821)model execute task failed, device_id=0, model stream_id=555, model task_id=5, model_id=516, first_task_id=65535
+[ERROR] RUNTIME(821)aicore kernel execute failed, device_id=0, stream_id=553, task_id=253, fault kernel_name=0_61_strided_slice_21, func_name=te_stridedsliced_2a380886f2b8c12f0_39e23fbe92dfe7e1__kernel0
+2020-11-06 11:30:19.915645: W tensorflow/core/framework/op_kernel.cc:1639] Unavailable: Internal errors
+2020-11-06 11:30:22.915779: F tf_adapter/kernels/geop_npu.cc:570] GeOp15_0GEOP::::DoRunAsync Failed
+Fatal Python error: Aborted
+Thread 0x0000fffdd37fe1e0 (most recent call first):
+  File "/usr/local/Ascend/tfplugin/latest/tfplugin/python/site-packages/npu_bridge/estimator/npu/npu_hook.py", line 194 in _run_coordinate
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffdd1ffb1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1443 in _call_tf_sessionrun
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1350 in _run_fn
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1365 in _do_call
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1359 in _do_run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1180 in _run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 956 in run
+  File "/usr/local/Ascend/tfplugin/latest/tfplugin/python/site-packages/npu_bridge/estimator/npu/npu_hook.py", line 203 in _run_outfeed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd7dffb1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd7e7fc1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd7effd1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd7f7fe1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd7ffff1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd94ff81e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd957f91e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd95ffa1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000fffd967fb1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/multiprocessing/queues.py", line 224 in _feed
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 870 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000ffff63dbf1e0 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 296 in wait
+  File "/usr/local/ma/python3.7/lib/python3.7/queue.py", line 170 in get
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/summary/writer/event_file_writer.py", line 159 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 926 in _bootstrap_inner
+  File "/usr/local/ma/python3.7/lib/python3.7/threading.py", line 890 in _bootstrap
+Thread 0x0000ffff88b38010 (most recent call first):
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1443 in _call_tf_sessionrun
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1350 in _run_fn
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1365 in _do_call
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1359 in _do_run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1180 in _run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 956 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/monitored_session.py", line 1176 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/monitored_session.py", line 1418 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/monitored_session.py", line 1345 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/monitored_session.py", line 1259 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/training/monitored_session.py", line 754 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1494 in _train_with_estimator_spec
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1195 in _train_model_default
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 1161 in _train_model
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_estimator/python/estimator/estimator.py", line 370 in train
+  File "/cache/user-job-dir/code/utils.py", line 225 in train_and_eval
+  File "/home/work/user-job-dir/code/main.py", line 707 in main
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/absl/app.py", line 251 in _run_main
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/absl/app.py", line 300 in run
+  File "/usr/local/ma/python3.7/lib/python3.7/site-packages/tensorflow_core/python/platform/app.py", line 40 in run
+  File "/home/work/user-job-dir/code/main.py", line 714 in <module>
+2020-11-06 11:30:31,934 825 PCOMPILE Master process dead. worker process quiting..
+2020-11-06 11:30:32,187 829 PCOMPILE Master process dead. worker process quiting..
+2020-11-06 11:30:32,190 827 PCOMPILE Master process dead. worker process quiting..
+2020-11-06 11:30:32,198 824 PCOMPILE Master process dead. worker process quiting..
+2020-11-06 11:30:32,230 830 PCOMPILE Master process dead. worker process quiting..
+[Modelarts Service Log]2020-11-06 11:30:32,400 - ERROR - FMK of device2 (pid: [170]) has exited with non-zero code: -6
+[Modelarts Service Log]2020-11-06 11:30:32,401 - INFO - Begin destroy FMK processes
+[Modelarts Service Log]2020-11-06 11:30:32,401 - INFO - FMK of device2 (pid: [170]) has exited
+[Modelarts Service Log]2020-11-06 11:30:32,401 - INFO - End destroy FMK processes
+=== begin proc exit    ===
+=== begin stop slogd   ===
+===   end pro exit     ===
+2020-11-06 11:30:32,968 826 PCOMPILE Master process dead. worker process quiting..
+2020-11-06 11:30:33,230 823 PCOMPILE Master process dead. worker process quiting..
+2020-11-06 11:30:33,404 828 PCOMPILE Master process dead. worker process quiting..
+[ModelArts Service Log]modelarts-pipe: total length: 178608
+/usr/local/ma/python3.7/lib/python3.7/multiprocessing/semaphore_tracker.py:144: UserWarning: semaphore_tracker: There appear to be 35 leaked semaphores to clean up at shutdown
+  len(cache))
+[Modelarts Service Log]Training end with return code: 250
+[Modelarts Service Log]training end at 2020-11-06-11:30:33
+[Modelarts Service Log]Training completed.
